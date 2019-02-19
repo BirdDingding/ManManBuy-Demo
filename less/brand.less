@@ -1,0 +1,41 @@
+@import "_base.less";
+
+#main {
+    background-color: #fff;
+    #lead-nav {
+        height: .4rem;
+        background-color: #f4f4f4;
+        padding-left: .1rem;
+        color: #a5a5a5;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        a {
+            color: #a5a5a5;
+            line-height: .4rem;
+        }
+    }
+    #brand {
+        .title {
+            border: 1px solid #ccc;
+            margin: .1rem .05rem;
+            background-color: #eee;
+            color: #874604;
+            padding-left: .1rem;
+            line-height: .4rem;
+            font-size: .16rem; 
+        }
+        .brandlist {
+            .mui-table-view::before {
+                height: 0;         
+            }
+            .mui-table-view-cell:after {
+                right: .15rem;
+            }
+            li {
+                a {
+                  font-size: .16rem; 
+                }
+            }
+        }
+    }
+}

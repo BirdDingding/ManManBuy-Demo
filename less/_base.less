@@ -1,0 +1,37 @@
+@main-color: #fd582f;
+
+body {
+    /* Mui默认是17px */
+    font-size: .14rem;
+}
+
+/* 设置我们的html根元素来实现rem适配 */
+
+html {
+    /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
+    font-size: 26.66667vw;
+}
+
+/* 去掉默认的间距 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    /* 解决图片和块级元素3px间隙问题 */
+    vertical-align: middle;
+}
+
+/* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
+
+// body {
+//     display: flex;
+//     /* 设置flex主轴方向是垂直 */
+//     flex-direction: column;
+//     /* 推荐使用100vh 不需要给父元素html设置高度 自然和页面一样高 */
+//     height: 100vh;
+//     /* 使用固定的定位的方式设置padding把内容挤到中间来 */
+//     /* padding: .45rem 0; */
+// }

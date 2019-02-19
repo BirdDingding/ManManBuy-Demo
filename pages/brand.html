@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ManManBuy-品牌大全</title>
+
+    <!-- 1. 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <!-- 2. 引入字体图标库的css -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入后台自己样式 -->
+    <link rel="stylesheet" href="../less/brand.css">
+    <!-- 4. 引入一个less.js的编译器文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+
+    <header id="header">
+
+    </header>
+
+    <main id="main">
+        <section id="lead-nav">
+            <a href="index.html" class="">首页</a>
+            <i class="fa fa-angle-right"></i>
+            <a href="brand.html">品牌大全</a>
+        </section>
+        <section id="brand">
+            <div class="title">热门品牌排行</div>
+            <div class="brandlist">
+                <ul class="mui-table-view brand-name">
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+
+    </footer>
+
+    <script type="text/html" id="brandlistTpl">
+        {{ each result value }}
+            <li class="mui-table-view-cell names" data-id="{{value.brandTitleId}}">
+                <a class="mui-navigate-right" href="brandTop10.html?id={{value.brandTitleId}}&brandtitle={{value.brandTitle}}">
+                    <span>{{value.brandTitle}}</span>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 1. 引入Mui的js文件 需要使用MUi一些JS功能 弹框 轮播图 滚动等 -->
+    <script src="../lib/mui/js/mui.js"></script>
+    <!-- 2. 引入一个zepto 是用来给 获取元素 添加事件 发送请求之类操作 -->
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <!-- 3. 引入一个artTemplate-web.js 创建模板 渲染数据的 -->
+    <script src="../lib/artTemplate/template-web.js"></script>
+    <!-- 4. 引入自己的js -->
+    <script src="../js/brand.js"></script>
+</body>
+
+</html>

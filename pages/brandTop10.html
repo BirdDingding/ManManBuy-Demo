@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ManManBuy-BrandTop10</title>
+
+    <!-- 1. 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <!-- 2. 引入字体图标库的css -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入后台自己样式 -->
+    <link rel="stylesheet" href="../less/brandTop10.css">
+    <!-- 4. 引入一个less.js的编译器文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+
+    <header id="header">
+
+    </header>
+
+    <main id="main">
+        <section id="charst">
+            <div class="title">
+                <span class="changename">平板电视</span><span>哪个好，十大品牌排行榜</span>
+            </div>
+            <div id="brand-list">
+                <ul class="mui-table-view top10list">
+                </ul>
+            </div>
+        </section>
+        <section id="goods">
+            <div class="title" id="saletitle">
+                <span class="changename">平板电视销量排行</span>
+            </div>
+            <div id="goodslist">
+                <ul class="mui-table-view saleList">
+                </ul>
+            </div>
+        </section>
+        <section id="commentlist">
+            <div class="title" id="comtitle">
+                <span class="changename">平板电视最新评论</span>
+            </div>
+            <div class="comContent">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+                            <div class="mui-media-body">
+                                LG 49LF5400 49英寸 全高清 普通LED液晶电视
+                            </div>
+                        </a>
+                        div
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+
+    </footer>
+
+    <script type="text/html" id="top10Tpl">
+        {{ each result value index}}
+            {{ if index == 0}}
+                <li class="mui-table-view-cell mui-media">
+                    <a href="javascript:;">
+                        <i class="mui-media-object mui-pull-left charts top1">{{index + 1}}</i>
+                        <div class="mui-media-body">
+                            {{ value.brandName }}
+                            <p class='mui-ellipsis'>30天全网销售：{{value.brandInfo}}</p>
+                        </div>
+                    </a>
+                </li>
+            {{ else if index == 1}}
+                <li class="mui-table-view-cell mui-media">
+                    <a href="javascript:;">
+                        <i class="mui-media-object mui-pull-left charts top2">{{index + 1}}</i>
+                        <div class="mui-media-body">
+                            {{ value.brandName }}
+                            <p class='mui-ellipsis'>30天全网销售：{{value.brandInfo}}</p>
+                        </div>
+                    </a>
+                </li>
+            {{ else if index == 2 }}
+                <li class="mui-table-view-cell mui-media">
+                    <a href="javascript:;">
+                        <i class="mui-media-object mui-pull-left charts top3">{{index + 1}}</i>
+                        <div class="mui-media-body">
+                            {{ value.brandName }}
+                            <p class='mui-ellipsis'>30天全网销售：{{value.brandInfo}}</p>
+                        </div>
+                    </a>
+                </li>
+            {{ else }}
+                <li class="mui-table-view-cell mui-media">
+                    <a href="javascript:;">
+                        <i class="mui-media-object mui-pull-left charts">{{index + 1}}</i>
+                        <div class="mui-media-body">
+                            {{ value.brandName }}
+                            <p class='mui-ellipsis'>30天全网销售：{{value.brandInfo}}</p>
+                        </div>
+                    </a>
+                </li>
+            {{ /if }}
+        {{ /each}}
+    </script>
+
+    <script type="text/html" id="top10ListTpl">
+        {{ each result value index }}
+            <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">
+                        {{@value.productImg}}
+                    </div>
+                    <div class="mui-media-body">
+                        <p class='mui-ellipsis goodsname'>{{value.productName}}</p>
+                        <p class='mui-ellipsis'>{{value.productPrice}}</p>
+                        <span>{{value.productQuote}}</span><span>{{value.productCom}}</span>
+                    </div>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+    <!-- 1. 引入Mui的js文件 需要使用MUi一些JS功能 弹框 轮播图 滚动等 -->
+    <script src="../lib/mui/js/mui.js"></script>
+    <!-- 2. 引入一个zepto 是用来给 获取元素 添加事件 发送请求之类操作 -->
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <!-- 3. 引入一个artTemplate-web.js 创建模板 渲染数据的 -->
+    <script src="../lib/artTemplate/template-web.js"></script>
+    <!-- 4. 引入自己的js -->
+    <script src="../js/brandTop10.js"></script>
+</body>
+
+</html>
